@@ -39,6 +39,7 @@ app.use(express.static('public'));
  */
 
 app.get('/', homepage(req, res) => {
+  if (err) throw err;
   res.sendFile(__dirname + '/views/index.html');
 });
 
