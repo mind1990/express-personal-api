@@ -15,6 +15,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Profile Data
+// const profileData = {
+//     name: 'Tirapat',
+//     github: 'http://github.com/Tirapat',
+//     dob: 1980,
+//   }
+
 /************
  * DATABASE *
  ************/
@@ -30,16 +37,11 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 
 
-// app.get('/api/profile' (req, res) => {
-//   if (err) throw err;
-//   res.endpoitns[1].profile;
-// })
 /*
  * HTML Endpoints
  */
 
-app.get('/', homepage(req, res) => {
-  if (err) throw err;
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
@@ -66,34 +68,7 @@ app.get('/api', (req, res) => {
     {
       method: "GET",
       path: "/api/profile",
-      description: "Data about me",
-      profile: {
-        name: 'Tirapat Numsinvichietchai',
-        githubUsername: 'mind1990',
-        githubLink: 'https://github.com/mind1990',
-        age: 28,
-        height: "5'6",
-        weight: 135,
-        email: 'mind1990@gmail.com',
-        pets: [
-          {
-            name: 'Pearl',
-            type: 'Cat',
-            color: 'Black'
-          }
-        ],
-        hoppies: [
-          {
-            kind: 'Badminton',
-            category: 'sport',
-            maxPlayers: 4
-          },
-          {
-            kind: 'Singing',
-            category: 'art'
-          }
-        ]
-      }
+      description: "Data about me"
     },
     {
       method: "POST",
@@ -103,6 +78,38 @@ app.get('/api', (req, res) => {
   ]
   })
 });
+
+app.get('/api/profile', (req, res) => {
+  res.json({
+    name: 'Tirapat Numsinvichietchai',
+    githubUsername: 'mind1990',
+    githubLink: 'https://github.com/mind1990',
+    age: 28,
+    height: "5'6",
+    weight: 135,
+    email: 'mind1990@gmail.com',
+    pets: [
+      {
+        name: 'Pearl',
+        type: 'Cat',
+        color: 'Black'
+      }
+    ],
+    hoppies: [
+      {
+        kind: 'Badminton',
+        category: 'sport',
+        maxPlayers: 4
+      },
+      {
+        kind: 'Singing',
+        category: 'art'
+      }
+    ]
+  })
+});
+
+
 
 /**********
  * SERVER *
