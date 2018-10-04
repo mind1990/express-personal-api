@@ -30,10 +30,10 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 
 
-app.get('/api/profile' (req, res) => {
-  if (err) throw err;
-  res.endpoitns[1].profile;
-})
+// app.get('/api/profile' (req, res) => {
+//   if (err) throw err;
+//   res.endpoitns[1].profile;
+// })
 /*
  * HTML Endpoints
  */
@@ -78,14 +78,14 @@ app.get('/api', (req, res) => {
           {
             name: 'Pearl',
             type: 'Cat',
-            color: 'Black and brown'
+            color: 'Black'
           }
         ],
         hoppies: [
           {
             kind: 'Badminton',
             category: 'sport',
-            maxPlayers: 4,
+            maxPlayers: 4
           },
           {
             kind: 'Singing',
